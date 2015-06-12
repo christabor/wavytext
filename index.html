@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+    <style type="text/css">
+    body {
+        background-color: #f1f1f1;
+        padding: 1em;
+        text-align: center;
+        font-family: "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+        font-weight: 100;
+        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    body.dark {
+        background-color: #444;
+        color: white;
+    }
+    a {
+        color: black;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 4px;
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: #F25113;
+    }
+    a:hover {
+        background-color: black;
+        color: #F25113;
+    }
+    h1 {
+        margin: 0 0 0.4em 0;
+        padding: 0;
+        font-size: 180px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    ul {
+        font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-align: left;
+        width: 60%;
+        margin: 0 auto;
+        line-height: 2.4em;
+    }
+    hr {
+        border: 1px solid #ddd;
+        margin: 2em 0;
+    }
+    input {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin: 10px auto;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Wavey</h1>
+    <a href="#" id="run">Works great on even more complicated letters (click me!)</a>
+    <a href="#" id="dark">Turn the lights <span>off</span></a>
+    <h2>super-cali-fraga-listic-expi-ali-docious</h2>
+    <label>
+        <input type="text" name="speed" value="0.8s">
+    </label>
+    <a href="#" id="adjust-speed">Adjust speed</a>
+    <hr>
+    <h4>Optional configuration options:</h4>
+    <ul>
+        <li>prefixes: [array] - an array of strings, representing all the vendor prefixes to support.</li>
+        <li>animation_name: [string] - a string to use as the animation name, for override in your own css.</li>
+        <li>transition_speed: [string] - a string representing the css transition speed (e.g. 0.45s)</li>
+        <li>keyframes: [object] - an object, where each key represents a number from 1-100, for each step of the keyframe animation. The value is an array, with two keys: the number of pixels to move up, and the color to change to. (e.g. ['10px', 'orange'])</li>
+        <li>char_classes: [array] - an array of strings representing custom classes for each wavyText character.</li>
+        <li>style_id: [string] - the <style></style> tag id to use.</li>
+    </ul>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="wavytext.js"></script>
+<script>
+$(document).ready(function(){
+    'use strict';
+    var is_dark = false;
+    $('h1').wavyText({
+        transition_speed: '0.8s'
+    });
+    $('#run').on('click', function(){
+        $('h2').wavyText();
+    });
+    $('#adjust-speed').on('click', function(){
+        $('h1, h2').wavyText({
+            transition_speed: $('input').val().trim()
+        });
+    });
+    $('#dark').on('click', function(){
+        if(is_dark) {
+            $('body').removeClass('dark');
+            $(this).find('span').text('off');
+        } else {
+            $('body').addClass('dark');
+            $(this).find('span').text('on');
+        }
+        is_dark = !is_dark;
+    });
+});
+</script>
+</body>
+</html>
