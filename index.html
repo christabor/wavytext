@@ -11,24 +11,33 @@
         text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
     }
     body.dark {
-        background-color: #444;
+        background-color: #282828;
         color: white;
+    }
+    body.dark hr {
+        border-color: #333;
     }
     a {
         color: black;
         border-radius: 4px;
-        padding: 10px;
+        padding: 10px 16px;
         margin: 4px;
+        font-size: 14px;
+        text-decoration: none;
         display: inline-block;
         text-transform: uppercase;
         background-color: #F25113;
+    }
+    .big {
+        font-size: 25px;
+        font-weight: bold;
     }
     a:hover {
         background-color: black;
         color: #F25113;
     }
     h1 {
-        margin: 0 0 0.4em 0;
+        margin: 0 0 0.2em 0;
         padding: 0;
         font-size: 180px;
     }
@@ -46,6 +55,9 @@
         border: 1px solid #ddd;
         margin: 2em 0;
     }
+    h1:hover {
+        text-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+    }
     input {
         padding: 10px;
         font-size: 20px;
@@ -57,14 +69,16 @@
     </style>
 </head>
 <body>
-    <h1>Wavey</h1>
-    <a href="#" id="run">Works great on even more complicated letters (click me!)</a>
-    <a href="#" id="dark">Turn the lights <span>off</span></a>
-    <h2>super-cali-fraga-listic-expi-ali-docious</h2>
+    <small>edit the text below! &#x25BC;</small><br>
+    <h1 contenteditable="true">Wavey</h1>
     <label>
         <input type="text" name="speed" value="0.8s">
     </label>
     <a href="#" id="adjust-speed">Adjust speed</a>
+    <hr>
+    <a href="#" id="run">Works great on even more complicated letters (click me!)</a>
+    <a href="#" id="dark">Turn the lights <span>off</span></a>
+    <h2>super-cali-fraga-listic-expi-ali-docious</h2>
     <hr>
     <h4>Optional configuration options:</h4>
     <ul>
@@ -75,7 +89,7 @@
         <li>char_classes: [array] - an array of strings representing custom classes for each wavyText character.</li>
         <li>style_id: [string] - the <style></style> tag id to use.</li>
     </ul>
-    <a href="https://github.com/christabor/wavytext" title="wavytext github plugin page">Get it now!</a>
+    <a href="https://github.com/christabor/wavytext" class="big" title="wavytext github plugin page">Get it now!</a>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="wavytext.js"></script>
 <script>
