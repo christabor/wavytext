@@ -1,5 +1,5 @@
+[![MIT Badge](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/christabor/wavytext/master/LICENSE)
+![Donation badge](https://img.shields.io/gratipay/christabor.svg)
+
 # wavytext
 A jQuery plugin for making wavy, colorful text.
-
-### Support / donations
-![Donation badge](https://img.shields.io/gratipay/christabor.svg)
